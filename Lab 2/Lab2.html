@@ -1,0 +1,36 @@
+﻿<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true">
+    var mapKC;
+    var mapSTL;
+    var myOptions = {
+        zoom: 6,
+        mapTypeId: 'terrain'
+    };
+    mapKC = new google.maps.Map($('#KCmap')[0], myOptions);
+    mapSTL = new google.maps.Map($('#STLmap')[0], myOptions);
+    var posKC = new google.maps.LatLng(39.099722, -94.578333);
+    var posSTL = new google.maps.LatLng(38.627222, -90.197778);
+
+    mapKC.setCenter(posKC);
+    mapSTL.setCenter(posSTL);
+</script>
+
+<div data-role="page" id="page1">
+
+     <div data-role="header">
+          <h1>Lab 2 Tony Sommer</h1>
+     </div>
+
+    <a href="#popupKC" data-rel="popup" data-role="button" >Kansas City</a>
+
+    <div data-role="popup" id="popupKC" data-overlay-theme="a" data-theme="d" data-corners="false">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <div id="KCMap" class="map"></div>
+    </div>
+
+    <a href="#popupSTL" data-rel="popup" data-role="button" >St. Louis</a>
+
+    <div data-role="popup" id="popupSTL" data-overlay-theme="a" data-theme="d" data-corners="false">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <div id="STLMap" class="map"></div>
+    </div>
+</div>
